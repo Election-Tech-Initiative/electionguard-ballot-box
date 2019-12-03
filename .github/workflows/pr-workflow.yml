@@ -1,0 +1,18 @@
+name: Pull Request
+
+on: [pull_request]
+
+jobs:
+  linux_build:
+    name: 'Linux Build'
+    runs-on: 'ubuntu-latest'
+    steps:
+      - uses: actions/checkout@master
+      - name: Setup
+        run: yarn
+      - name: Lint
+        run: yarn lint
+      - name: Test
+        run: yarn test:ci
+      - name: Build
+        run: yarn build

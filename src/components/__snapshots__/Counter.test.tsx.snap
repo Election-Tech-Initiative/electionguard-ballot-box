@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`can renders Counter 1`] = `
+<div
+  class="sc-bwzfXH dOdixM"
+>
+  <h1>
+    Unset
+  </h1>
+  <hr
+    class="sc-bdVaJa UoSJW"
+  />
+  <p
+    class="sc-htpNat zkLUL"
+  >
+    0
+  </p>
+</div>
+`;

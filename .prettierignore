@@ -1,0 +1,8 @@
+.github
+build
+coverage
+node_modules
+react-app-env.d.ts
+serviceWorker.ts
+prodserver
+src/setupProxy.js

@@ -1,14 +1,15 @@
 ---
 page_type: sample
 languages:
-- csharp
+  - javascript
 products:
-- dotnet
-description: "Add 150 character max description"
-urlFragment: "update-this-to-unique-url-stub"
+  - react
+description: 'Add 150 character max description'
+urlFragment: 'update-this-to-unique-url-stub'
 ---
 
-# Official Microsoft Sample
+
+# ElectionGuard Ballot Box Device
 
 <!-- 
 Guidelines on README format: https://review.docs.microsoft.com/help/onboard/admin/samples/concepts/readme-template?branch=master
@@ -18,7 +19,10 @@ Guidance on onboarding samples to docs.microsoft.com/samples: https://review.doc
 Taxonomies for products and languages: https://review.docs.microsoft.com/new-hope/information-architecture/metadata/taxonomies?branch=master
 -->
 
-Give a short description for your sample here. What does it do and why is it important?
+The ElectionGuard Reference Ballot Box Device is a fully functional
+implementation built in ReactJS. It is a counter for the ballot box to count and store cast or spoil ballots.
+
+This reference implementation is meant to demonstrate a possible use case of the ElectionGuard SDK.
 
 ## Contents
 
@@ -48,17 +52,3 @@ Outline step-by-step instructions to execute the sample and see its output. Incl
 ## Key concepts
 
 Provide users with more context on the tools and services used in the sample. Explain some of the code that is being used and how services interact with each other.
-
-## Contributing
-
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
-Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
-the rights to use your contribution. For details, visit https://cla.opensource.microsoft.com.
-
-When you submit a pull request, a CLA bot will automatically determine whether you need to provide
-a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions
-provided by the bot. You will only need to do this once across all repos using our CLA.
-
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
-contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.

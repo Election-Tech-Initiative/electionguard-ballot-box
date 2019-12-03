@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Button 1`] = `
+<button
+  class="sc-bwzfXH gBzjSr"
+  type="button"
+>
+  foo
+</button>
+`;
+
+exports[`renders DecoyButton 1`] = `
+<div
+  class="sc-bdVaJa fUKbkn"
+>
+  DecoyButton
+</div>
+`;
+
+exports[`renders big Button 1`] = `
+<button
+  class="sc-bwzfXH bbSMPw"
+  type="button"
+>
+  I’m a big button!
+</button>
+`;
+
+exports[`renders danger Button 1`] = `
+<button
+  class="sc-bwzfXH kKlRTC"
+  type="button"
+>
+  Danger!
+</button>
+`;
+
+exports[`renders primary Button 1`] = `
+<button
+  class="sc-bwzfXH gvKole"
+  type="button"
+>
+  Primary
+</button>
+`;
+
+exports[`renders small Button 1`] = `
+<button
+  class="sc-bwzfXH hyvTSe"
+  type="button"
+>
+  I’m a small button!
+</button>
+`;

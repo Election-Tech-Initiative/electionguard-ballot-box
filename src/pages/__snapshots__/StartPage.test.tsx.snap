@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders StartPage 1`] = `
+<div
+  class="sc-gZMcBi kZBVlx"
+>
+  <div
+    class="sc-bZQynM bsmBBS"
+  >
+    <h1>
+      Ballot Box
+    </h1>
+    <hr
+      class="sc-EHOje YINzU"
+    />
+    <p>
+      Select Ballot Box Type
+    </p>
+    <div
+      class="sc-gzVnrw cOUDlP"
+    >
+      <div
+        class="sc-bxivhb woZhC"
+      >
+        <button
+          aria-label="Select cast as ballot box type"
+          class="sc-bwzfXH eHmtkf"
+          type="button"
+        >
+          Cast
+        </button>
+      </div>
+      <div
+        class="sc-bxivhb woZhC"
+      >
+        <button
+          aria-label="Select spoil as ballot box type"
+          class="sc-bwzfXH eHmtkf"
+          type="button"
+        >
+          Spoil
+        </button>
+      </div>
+    </div>
+  </div>
+  <img
+    alt="Election Guard Logo"
+    class="sc-gqjmRU krlryL"
+    src="/images/electionguard.svg"
+  />
+</div>
+`;

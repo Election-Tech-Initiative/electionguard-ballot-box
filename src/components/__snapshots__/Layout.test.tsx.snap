@@ -2,7 +2,7 @@
 
 exports[`can renders Layout 1`] = `
 <div
-  class="sc-gZMcBi kZBVlx"
+  class="sc-fjdhpX eFcaR"
 >
   <div
     class="sc-bZQynM bsmBBS"
@@ -45,8 +45,8 @@ exports[`can renders Layout 1`] = `
   </div>
   <img
     alt="Election Guard Logo"
-    class="sc-gqjmRU krlryL"
-    src="/images/electionguard.svg"
+    class="sc-jzJRlG bhYxid"
+    src="/images/rock-county-wisconsin-logo.png"
   />
 </div>
 `;

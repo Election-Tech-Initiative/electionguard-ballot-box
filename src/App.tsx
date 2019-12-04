@@ -9,11 +9,13 @@ import BallotBoxContext from './contexts/ballotBoxContext'
 import { BallotBoxType } from './config/types'
 
 interface State {
+  isLiveMode: boolean
   type: BallotBoxType
   count: number
 }
 
 const initialState: State = {
+  isLiveMode: true,
   type: BallotBoxType.Unset,
   count: 0,
 }
@@ -37,15 +39,18 @@ export class App extends React.Component<RouteComponentProps, State> {
     this.reset()
   }
 
-  private reset() {
+  private reset = () => {
     this.setState(initialState)
+    const { history } = this.props
+    history.push('/')
   }
 
   public render() {
-    const { type, count } = this.state
+    const { isLiveMode, type, count } = this.state
     return (
       <BallotBoxContext.Provider
         value={{
+          isLiveMode,
           type,
           setType: this.setBallotBoxType,
           count,

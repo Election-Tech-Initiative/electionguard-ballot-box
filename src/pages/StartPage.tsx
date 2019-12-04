@@ -15,10 +15,9 @@ const Display = styled.div`
 
 const LogoImage = styled.img`
   position: absolute;
-  right: 0;
-  bottom: 0;
-  margin: 1rem;
-  max-width: 12rem;
+  top: 0;
+  margin-top: 1rem;
+  width: 18 rem;
 `
 
 const StartPage = () => {
@@ -42,7 +41,7 @@ const StartPage = () => {
       <LogoImage
         onClick={() => eject()}
         alt="Election Guard Logo"
-        src="/images/electionguard.svg"
+        src="/images/rock-county-wisconsin-logo.png"
       />
     </Display>
   )

@@ -6,6 +6,7 @@ export enum BallotBoxType {
 }
 
 export interface BallotBoxContextInterface {
+  isLiveMode: boolean
   setType: (type: BallotBoxType) => void
   type: BallotBoxType
   setCount: (count: number) => void

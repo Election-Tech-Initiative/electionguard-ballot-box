@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders NotFoundPage 1`] = `
-<div>
+<div
+  class="sc-bxivhb chDFzS"
+>
   <h1>
     Page Not Found.
   </h1>

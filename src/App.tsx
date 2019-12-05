@@ -31,7 +31,7 @@ export class App extends React.Component<RouteComponentProps, State> {
   componentDidMount() {
     const ws = new WebSocket(this.state.endpoint)
     ws.onopen = () => {
-      console.log('weboscket connection open')
+      console.log('websocket connection open')
     }
 
     // eslint-disable-next-line @typescript-eslint/no-unused-vars

@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
+    "@serialport/terminal": "^8.0.5",
     "express": "^4.17.1",
-    "http-proxy-middleware": "^0.19.1"
+    "http-proxy-middleware": "^0.19.1",
+    "serialport": "^8.0.5"
+  },
+  "scripts": {
+    "start": "node index.js"
   }
 }

@@ -11,6 +11,7 @@ export function render(
   {
     route = '/',
     history = createMemoryHistory({ initialEntries: [] }),
+    isLiveMode = true,
     type = BallotBoxType.Unset,
     setType = jest.fn(),
     count = 0,
@@ -23,6 +24,7 @@ export function render(
     ...testRender(
       <BallotBoxContext.Provider
         value={{
+          isLiveMode,
           type,
           setType,
           count,

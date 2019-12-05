@@ -2,18 +2,26 @@
 
 exports[`can renders Counter 1`] = `
 <div
-  class="sc-bwzfXH dOdixM"
+  class="sc-EHOje kRQgZM"
 >
-  <h1>
-    Unset
-  </h1>
-  <hr
-    class="sc-bdVaJa UoSJW"
-  />
-  <p
-    class="sc-htpNat zkLUL"
+  <div
+    class="sc-bZQynM hxCbxs"
   >
-    0
-  </p>
+    <h1
+      class="sc-gzVnrw drkSJf"
+    >
+      Unset
+    </h1>
+  </div>
+  <div
+    class="sc-dnqmqq kVSpfo"
+  >
+    <button
+      class="sc-bwzfXH hyvTSe"
+      type="button"
+    >
+      Display Count
+    </button>
+  </div>
 </div>
 `;

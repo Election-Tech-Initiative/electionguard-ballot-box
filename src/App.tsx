@@ -12,33 +12,18 @@ interface State {
   isLiveMode: boolean
   type: BallotBoxType
   count: number
-  endpoint: string
 }
 
 const initialState: State = {
-  isLiveMode: true,
+  isLiveMode: process.env.NODE_ENV === 'production',
   type: BallotBoxType.Unset,
   count: 0,
-  endpoint: 'ws://localhost:3001',
 }
 
 export class App extends React.Component<RouteComponentProps, State> {
   constructor(props: RouteComponentProps) {
     super(props)
     this.state = initialState
-  }
-
-  componentDidMount() {
-    const ws = new WebSocket(this.state.endpoint)
-    ws.onopen = () => {
-      console.log('websocket connection open')
-    }
-
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    ws.onmessage = evt => {
-      console.log(`message received: ${JSON.stringify(evt.data)}`)
-      this.setBallotCount(this.state.count + 1)
-    }
   }
 
   private setBallotBoxType = (type: BallotBoxType) => {

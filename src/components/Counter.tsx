@@ -4,6 +4,7 @@ import BallotBoxContext from '../contexts/ballotBoxContext'
 import { BallotBoxType } from '../config/types'
 import Button from './Button'
 import SplashMessage from './NotificationOverlay'
+import QRScanner from './QRScanner'
 
 const Line = styled.hr`
   width: 100%;
@@ -81,6 +82,7 @@ const Counter = () => {
   const { type, count, setCount, isLiveMode } = useContext(BallotBoxContext)
   const [displayCount, setDisplayCount] = useState(false)
   const [displaySplash, setDisplaySplash] = useState(false)
+  const incrementCount = () => setCount(count + 1)
 
   useEffect(() => {
     if (count) {
@@ -110,11 +112,11 @@ const Counter = () => {
           {displayCount ? 'Hide Count' : 'Display Count'}
         </Button>
         {!isLiveMode ? (
-          <Button small onPress={() => setCount(count + 1)}>
+          <Button small onPress={incrementCount}>
             Insert Ballot
           </Button>
         ) : (
-          <></>
+          <QRScanner onScan={incrementCount} />
         )}
       </ButtonBar>
     </Display>

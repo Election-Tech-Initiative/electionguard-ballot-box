@@ -15,7 +15,7 @@ interface State {
 }
 
 const initialState: State = {
-  isLiveMode: true,
+  isLiveMode: process.env.NODE_ENV === 'production',
   type: BallotBoxType.Unset,
   count: 0,
 }

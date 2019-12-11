@@ -15,6 +15,6 @@ tar --exclude=.git \
     --exclude=.gitignore \
     --exclude=Dockerfile \
     --exclude=Makefile \
-    -zcvf electionguard-ballot-box.tar.gz electionguard-ballot-box.service ../
+    -zcvf electionguard-ballot-box.tar.gz electionguard-ballot-box.service run.sh ../
 
 echo "packaging complete"

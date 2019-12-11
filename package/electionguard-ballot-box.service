@@ -1,0 +1,14 @@
+[Unit]
+Description=ElectionGuard Ballot Box Device
+
+[Service]
+WorkingDirectory=/bin/electionguard-ballot-box/prodserver
+ExecStart=/usr/bin/yarn start
+Restart=always
+# Restart service after 10 seconds if the dotnet service crashes:
+RestartSec=10
+KillSignal=SIGINT
+SyslogIdentifier=votingworks-electionguard-ballot-box
+
+[Install]
+WantedBy=multi-user.target

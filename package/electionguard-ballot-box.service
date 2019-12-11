@@ -3,6 +3,7 @@ Description=ElectionGuard Ballot Box Device
 
 [Service]
 WorkingDirectory=/bin/electionguard-ballot-box/prodserver
+ExecStartPre=-+/bin/chmod 666 /dev/ttyACM0
 ExecStart=/usr/bin/yarn start
 Restart=always
 # Restart service after 10 seconds if the dotnet service crashes:

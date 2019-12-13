@@ -1,0 +1,72 @@
+name: Package
+
+on:
+    milestone:
+        types: [closed]
+
+jobs:
+  package:
+    name: 'Linux'
+    runs-on: 'ubuntu-latest'
+    steps:
+    - uses: actions/checkout@v1
+    - name: Setup
+      run: yarn
+    - name: Build
+      run: yarn build
+    - name: Change Package Script Access
+      run: chmod +x ./package/package.sh
+    - name: Package
+      shell: bash
+      run: |
+        cd ./package && ./package.sh
+    - name: Upload Package
+      uses: actions/upload-artifact@v1
+      with:
+        name: electionguard-ballot-box
+        path: package/electionguard-ballot-box.tar.gz
+    - name: Upload Linux Install Script
+      uses: actions/upload-artifact@v1
+      with:
+        name: install-script-linux
+        path: package/install.sh
+  release:
+    name: Upload Release
+    needs: [package]
+    runs-on: 'ubuntu-latest'
+    steps:
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1.0.0
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        release_name: Milestone Release
+        tag_name: v1.0.0
+        draft: true
+        prerelease: true
+    - name: Download Package
+      uses: actions/download-artifact@v1
+      with:
+        name: electionguard-ballot-box
+    - name: Download Linux Install Script
+      uses: actions/download-artifact@v1
+      with:
+        name: install-script-linux
+    - name: GZip Linux Artifacts
+      run: |
+        cp electionguard-ballot-box/electionguard-ballot-box.tar.gz .
+        cp install-script-linux/install.sh .
+        tar -zcvf electionguard-ballot-box-artifacts.tar.gz electionguard-ballot-box.tar.gz install.sh
+    - name: Display Artifacts
+      run: ls
+    - name: Upload Artifacts
+      id: upload-release-asset_1
+      uses: actions/upload-release-asset@v1.0.1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./electionguard-ballot-box-artifacts.tar.gz
+        asset_name: electionguard-ballot-box-artifacts.tar.gz
+        asset_content_type: application/x-compressed

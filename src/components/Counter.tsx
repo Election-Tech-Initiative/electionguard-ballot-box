@@ -49,7 +49,7 @@ const ButtonBar = styled.div`
   width: 100%;
   padding: 1rem;
 `
-const splashTimeout = 1000
+const splashTimeout = 5000
 
 function formatNumber(num: number) {
   return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')

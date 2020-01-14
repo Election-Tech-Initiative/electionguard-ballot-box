@@ -61,6 +61,7 @@ function sendData(data) {
   })
 }
 
+let scanned = []
 function listenForSerialPort() {
   const SerialPort = require('serialport')
   const port = new SerialPort(default_tty_device)
@@ -81,9 +82,16 @@ function listenForSerialPort() {
   })
 
   port.on('data', line => {
-    console.log(`> ${line}`)
-    appendFile(line)
-    sendData(line)
+    line += '' // Sanitize line
+    if(scanned.findIndex(x => x === line) === -1) {
+      console.log(`> ${line}`)
+      scanned.push(line)
+      appendFile(line)
+      sendData(line)
+    } else{
+      console.warn(`> ${line} - DUPLICATE`)
+      sendData('duplicate')
+    }
   })
 }
 

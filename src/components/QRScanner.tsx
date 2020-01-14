@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 
 interface Props {
   onScan: () => void
+  onDuplicate: () => void
 }
 
 class QRScanner extends Component<Props> {
@@ -19,7 +20,11 @@ class QRScanner extends Component<Props> {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     ws.onmessage = evt => {
       console.log(`message received: ${JSON.stringify(evt.data)}`)
-      this.props.onScan()
+      if (JSON.stringify(evt.data).includes('duplicate')) {
+        this.props.onDuplicate()
+      } else {
+        this.props.onScan()
+      }
     }
   }
 

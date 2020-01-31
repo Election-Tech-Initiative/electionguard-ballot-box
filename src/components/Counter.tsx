@@ -93,6 +93,10 @@ const Counter = () => {
     }
   }, [count])
 
+  const onDuplicate = () => {
+    console.warn('Duplicate Scanned')
+  }
+
   return (
     <Display>
       {displaySplash ? renderSplashMessage(type) : <></>}
@@ -116,7 +120,7 @@ const Counter = () => {
             Insert Ballot
           </Button>
         ) : (
-          <QRScanner onScan={incrementCount} />
+          <QRScanner onScan={incrementCount} onDuplicate={onDuplicate} />
         )}
       </ButtonBar>
     </Display>

@@ -19,6 +19,8 @@ const ws_port = 3005
 const server = http.createServer(app)
 const wsServer = new WebSocket.Server({ server })
 
+var ballotsFileName = './castBallots.json'
+
 app.use((req, res, next) => {
   res.set('Cache-Control', 'no-store, no-cache, must-revalidate, private')
   next()
@@ -48,11 +50,26 @@ server.listen(ws_port, () => {
 })
 
 function appendFile(data) {
-  fs.appendFile('data.txt', data, 'utf8', error => {
-    if (error) {
-      console.log(`error writing file: ${error}`)
+
+  fs.exists(ballotsFileName, exists => {
+
+    if (exists) {
+      var readValue = fs.readFileSync(ballotsFileName)
+      var dataArray = JSON.parse(readValue)
+      dataArray.push(data)
+      var writeValue = JSON.stringify(dataArray)
+      fs.writeFileSync(ballotsFileName, writeValue)
+    } else {
+      var dataArray = []
+      dataArray.push(data)
+      var writeValue = JSON.stringify(dataArray)
+      fs.writeFileSync(ballotsFileName, writeValue)
     }
   })
+}
+
+function loadFile(filename) {
+
 }
 
 function sendData(data) {
@@ -82,14 +99,18 @@ function listenForSerialPort() {
   })
 
   port.on('data', line => {
-    line += '' // Sanitize line
-    if(scanned.findIndex(x => x === line) === -1) {
-      console.log(`> ${line}`)
-      scanned.push(line)
-      appendFile(line)
-      sendData(line)
+    // Sanitize line
+    line += '' 
+    var length = line.length - 8 - 3
+    var substr = line.substr(8, length)
+    
+    if(scanned.findIndex(x => x === substr) === -1) {
+      console.log(`> ${substr}`)
+      scanned.push(substr)
+      appendFile(substr)
+      sendData(substr)
     } else{
-      console.warn(`> ${line} - DUPLICATE`)
+      console.warn(`> ${substr} - DUPLICATE`)
       sendData('duplicate')
     }
   })

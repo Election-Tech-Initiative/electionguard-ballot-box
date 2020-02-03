@@ -7,3 +7,6 @@ build: FORCE
 
 run: build
 	cd prodserver && node index.js
+
+package: build
+	cd package && ./package.sh

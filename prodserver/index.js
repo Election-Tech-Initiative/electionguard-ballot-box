@@ -15,7 +15,7 @@ const default_tty_device = '/dev/ttyACM0'
 
 const app = express()
 const app_port = 3000
-const ws_port = 3001
+const ws_port = 3005
 const server = http.createServer(app)
 const wsServer = new WebSocket.Server({ server })
 

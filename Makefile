@@ -5,5 +5,5 @@ FORCE:
 build: FORCE
 	yarn install && yarn build && cd prodserver && yarn install
 
-run:
+run: build
 	cd prodserver && node index.js

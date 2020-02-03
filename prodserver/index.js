@@ -19,7 +19,7 @@ const ws_port = 3005
 const server = http.createServer(app)
 const wsServer = new WebSocket.Server({ server })
 
-var ballotsFileName = './castBallots.json'
+var ballotsFileName = '../data/castBallots.json'
 
 app.use((req, res, next) => {
   res.set('Cache-Control', 'no-store, no-cache, must-revalidate, private')
@@ -103,7 +103,7 @@ function listenForSerialPort() {
     line += '' 
     var length = line.length - 8 - 3
     var substr = line.substr(8, length)
-    
+
     if(scanned.findIndex(x => x === substr) === -1) {
       console.log(`> ${substr}`)
       scanned.push(substr)

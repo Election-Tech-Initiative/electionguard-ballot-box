@@ -35,7 +35,7 @@ export class App extends React.Component<RouteComponentProps, State> {
   }
 
   private eject = () => {
-    // TODO Eject usb drive
+    // TODO: Eject usb drive
     this.reset()
   }
 

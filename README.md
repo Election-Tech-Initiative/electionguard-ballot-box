@@ -1,12 +1,3 @@
----
-page_type: sample
-languages:
-  - javascript
-products:
-  - react
-description: 'Add 150 character max description'
-urlFragment: 'update-this-to-unique-url-stub'
----
 
 ![Microsoft Defending Democracy Program: ElectionGuard](images/electionguard-banner.svg)
 

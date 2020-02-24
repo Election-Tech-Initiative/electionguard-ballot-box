@@ -4,7 +4,7 @@
 # ElectionGuard Ballot Box
 
 ![build](https://github.com/microsoft/electionguard-ballot-box/workflows/Package/badge.svg)
-[![license](https://img.shields.io/github/license/microsoft/electionguard-ballot-box)](License)
+[![license](https://img.shields.io/github/license/microsoft/electionguard-ballot-box)](LICENSE)
 
 The ElectionGuard Ballot Box is a fully functional
 implementation built in ReactJS. It is a counter for the ballot box to count and store cast or spoil ballots.

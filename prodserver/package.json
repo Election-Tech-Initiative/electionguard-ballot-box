@@ -5,7 +5,7 @@
   "dependencies": {
     "@serialport/terminal": "^8.0.5",
     "@types/ws": "^6.0.4",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "http-proxy-middleware": "^0.19.1",
     "serialport": "^8.0.5"
   },

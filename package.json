@@ -36,7 +36,7 @@
     "eslint-plugin-react-hooks": "^1.7.0",
     "jest-styled-components": "^6.3.4",
     "prettier": "^1.19.1",
-    "stylelint": "^9.8.0",
+    "stylelint": "^15.10.1",
     "stylelint-config-palantir": "^4.0.1",
     "stylelint-config-prettier": "^6.0.0",
     "stylelint-config-styled-components": "^0.1.1",
